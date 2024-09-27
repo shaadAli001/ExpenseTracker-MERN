@@ -27,12 +27,6 @@ app.use("/api/v1/user", userRouter)
 // transaction route
 app.use("/api/v1/transaction", transactionRouter);
 
-// static Files
-app.use(express.static(path.join(__dirname, "./client/dist")));
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, "./client/dist/index.html"));
-})
 
 const PORT = 8080 || process.env.PORT;
 
